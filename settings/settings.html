@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mindful Browser — Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Mindful Browser</h1>
+      <p class="subtitle">Settings &amp; configuration</p>
+    </header>
+
+    <section class="card">
+      <h2>Gemini API key</h2>
+      <p class="hint">
+        Used to evaluate your justifications. Get one at
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">aistudio.google.com</a>.
+        Stored locally; never sent anywhere except Google's API.
+      </p>
+      <div class="field-row">
+        <input type="password" id="apiKey" placeholder="paste API key" autocomplete="off" spellcheck="false">
+        <button id="toggleKey" type="button" class="secondary">Show</button>
+        <button id="saveKey" type="button">Save</button>
+      </div>
+      <div id="keyStatus" class="status" hidden></div>
+    </section>
+
+    <section class="card">
+      <h2>Blocked websites</h2>
+      <p class="hint">One domain per row. Subdomains are matched automatically (e.g. <code>m.facebook.com</code> is covered by <code>facebook.com</code>).</p>
+      <ul id="domainList" class="domain-list"></ul>
+      <div class="field-row">
+        <input type="text" id="newDomain" placeholder="example.com" autocomplete="off" spellcheck="false">
+        <button id="addDomain" type="button">Add</button>
+      </div>
+      <p id="domainError" class="error-text" hidden>Enter a valid domain (e.g. example.com).</p>
+    </section>
+
+    <section class="card">
+      <h2>Currently allowed</h2>
+      <p class="hint">Sites with active 5-minute access. Revoke any to block again immediately.</p>
+      <ul id="allowList" class="allow-list"></ul>
+    </section>
+
+    <footer>
+      <p>Mindful Browser v1.0.0</p>
+    </footer>
+  </main>
+  <script type="module" src="settings.js"></script>
+</body>
+</html>

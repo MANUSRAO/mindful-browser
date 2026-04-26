@@ -1,0 +1,227 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --text: #1a1d24;
+  --muted: #5a6172;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --ok: #067647;
+  --ok-bg: #ecfdf3;
+  --info: #1e40af;
+  --info-bg: #eff6ff;
+  --border: #e6e8ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --card: #161a22;
+    --text: #e6e8ed;
+    --muted: #99a1b3;
+    --accent: #818cf8;
+    --accent-hover: #6366f1;
+    --danger: #fda29b;
+    --danger-bg: #2c1011;
+    --ok: #6ce9a6;
+    --ok-bg: #0c1f15;
+    --info: #93c5fd;
+    --info-bg: #0c1a2f;
+    --border: #262b36;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(15, 17, 21, 0.04);
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.hint {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hint code {
+  background: var(--bg);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.hint a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.hint a:hover { text-decoration: underline; }
+
+.field-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+input[type="text"],
+input[type="password"] {
+  flex: 1;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+input.invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.15);
+}
+
+button {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+button:hover { background: var(--accent-hover); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+button.secondary:hover {
+  background: var(--bg);
+}
+
+button.small {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.status {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.status.info { background: var(--info-bg); color: var(--info); }
+.status.ok { background: var(--ok-bg); color: var(--ok); }
+.status.error { background: var(--danger-bg); color: var(--danger); }
+
+.error-text {
+  margin: 8px 0 0;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+ul.domain-list,
+ul.allow-list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+ul.domain-list li,
+ul.allow-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+ul li:last-child { border-bottom: none; }
+
+ul li.empty {
+  justify-content: center;
+  color: var(--muted);
+  font-style: italic;
+  padding: 16px;
+}
+
+.domain-text {
+  flex: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.remaining {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+footer {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}

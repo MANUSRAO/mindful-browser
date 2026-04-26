@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Mindful Browser",
+  "version": "1.0.0",
+  "description": "Blocks distracting websites unless you can justify a productive reason for visiting. Uses Gemini to evaluate intent.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/serviceWorker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Mindful Browser"
+  },
+  "options_ui": {
+    "page": "settings/settings.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["block/block.html", "block/block.js", "block/block.css", "utils/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

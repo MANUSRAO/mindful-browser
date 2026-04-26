@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pause and reflect</title>
+    <link rel="stylesheet" href="block.css" />
+  </head>
+  <body>
+    <main class="card" role="main">
+      <button
+        id="openSettings"
+        class="settings-btn"
+        type="button"
+        title="Open settings"
+        aria-label="Open settings"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+          ></path>
+        </svg>
+      </button>
+
+      <h1 id="heading"></h1>
+      <p class="lede">
+        Tell us your reason for visiting; if it's productive, you'll get
+        <strong>5 minutes</strong> of access.
+      </p>
+
+      <form id="form" autocomplete="off">
+        <label for="reason">Why do you want to access this website?</label>
+        <div
+          id="reason"
+          class="reason-input"
+          contenteditable="true"
+          role="textbox"
+          aria-multiline="true"
+          spellcheck="true"
+          data-placeholder="Be specific."
+        ></div>
+        <div class="actions">
+          <button type="submit" id="submit">Check my reason</button>
+          <button type="button" id="back" class="secondary">
+            Take me back
+          </button>
+        </div>
+      </form>
+
+      <div id="status" class="status" hidden></div>
+      <div id="result" class="result" hidden></div>
+    </main>
+    <script type="module" src="block.js"></script>
+  </body>
+</html>
